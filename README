@@ -7,7 +7,47 @@ QVariant hierarchies into valid JSON data.
 
 
 ########################################################################
-2. HOW TO USE
+2. HOW TO INSTALL/UNINSTALL
+
+The parser is really easy to install. There is 2 ways to install it:
+A) Classic way, with QtCreator then command line
+B) Expert way, entirely in command line
+C) Uninstall mode, in command line
+
+------------------------------------------------------------------------
+A) Classic way aka. noob way
+- Double-Click on "QtJSON.pro" file, in the extracted directory
+- Build the release version of the library with Qt:
+-- Select "QtJSON [...] Release" in the selector on the left pane
+   (or by pressing "ctrl+T" or "cmd+T")
+-- Build the lib: "Compile > Compile the project"
+   (or by pressing "ctrl+B" or "cmd+B")
+- Open a terminal in the lib directory (where the lib have been compiled)
+- Type "make install" in the terminal
+- AAAAAAAND it's done.
+
+B) Expert way aka. MeIzHacker way
+- Open a terminal in the source directory (where the .pro file stands)
+- type these commands:
+-- qmake
+-- make
+-- make install
+- AAAAAAAND it's done.
+
+C) Uninstall mode
+- Open a terminal in the compiled source directory
+  (if you've installed it by the "Classic Way") or source directory
+  (for the Expert way)
+- Type: make uninstall
+------------------------------------------------------------------------
+NB: Don't forget to:
+1) #include <qtjson/json.h>
+2) Link the QtJson lib to your project by adding to your .pro file:
+   LIBS += -lqtjson
+
+
+########################################################################
+3. HOW TO USE
 
 The parser is really easy to use. Let's say we have the following 
 QString of JSON data:
